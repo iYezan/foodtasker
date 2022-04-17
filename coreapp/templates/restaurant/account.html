@@ -1,3 +1,6 @@
+{% extends 'restaurant/base.html' %} {% block title %} Account {% endblock %} {%
+block body %}
+
 <div class="row">
   <div class="col-md-10 offset-md-1">
     <div class="card shadow text-white mb-3 mt-5">
@@ -6,9 +9,14 @@
       </div>
       <div class="card-body">
         <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %} {% bootstrap_form account_form %} {% bootstrap_form
+          restaurant_form %}
+
           <button type="submit" class="btn btn-black float-right">Save</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+{% endblock %}
